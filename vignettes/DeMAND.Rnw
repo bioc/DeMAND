@@ -22,8 +22,9 @@ Woo JH, Shimoni Y, Yang WS, Subramaniam P, Iyer A, Nicoletti P, Martinez MR, Lop
 In order to install the \emph{DeMAND} package, the user needs to first install R (\url{http://www.r-project.org}). After that \emph{DeMAND} and the required packages can be installed with:
 
 <<echo=TRUE, eval=FALSE, results=hide>>=
-source("http://bioconductor.org/biocLite.R")
-biocLite("DeMAND")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("DeMAND")
 @
 %-------------
 \section{To run DeMAND using the data provided the \emph{DeMAND} package}
